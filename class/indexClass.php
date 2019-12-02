@@ -14,5 +14,14 @@ class index extends ModelBase
 		$results = $info->fetchAll(PDO::FETCH_ASSOC);	
 		return $results;
 	}
+	
+	public function select_detail($id){
+		$sql="select * from perl where id=".$id;
+		$info= $this->db->query($sql);
+		
+		$results= $info->fetchAll(PDO::FETCH_ASSOC);
+		return $results;		
+	}	
+	
 }
 ?>
