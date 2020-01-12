@@ -1,12 +1,10 @@
 <?php
-include dirname(__FILE__) ."./../model/model_conf_perse.php";
-
 class index extends ModelBase
 {
 	public function perl(){
 		$sql .="select * from perl";
 		$sql .=" where true ";		
-		#クエリの実行
+		#クエリの実行 #$this->db　はModelBaseからの変数＄ｄｂを引き継いでいる
 		$info = $this->db->query($sql);	
 		//$info= $db->query($sql);
 		#データベースのデータを全て取得fetchAll(PDO::FETCH_ASSOC);

@@ -1,8 +1,9 @@
 <?php
-echo "perl";
+//Model db接続クラスの読み込み
+include_once "must_include.php";
+
 $id = $_GET["id"];
 echo "query_string_number:".$id;
-include_once "./../class/indexClass.php";
 
 $obj=new index();
 $select_querry = $obj->select_detail($id);

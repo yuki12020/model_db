@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+	#	RewriteCond %{REQUEST_FILENAME}\.php -f
+	#	RewriteRule ^(.*)$ $1.php
+	#   RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]	
+    RewriteCond %{REQUEST_URI} !\.css$
+    RewriteCond %{REQUEST_URI} !\.js$
+    RewriteCond %{REQUEST_URI} !\.jpg$
+    RewriteCond %{REQUEST_URI} !\.gif$
+    RewriteCond %{REQUEST_URI} !\.png$
+
+	#RewriteRule ^.*$ index.phpですべてのアクセスをindex.phpに集めています
+	#memo ↓を設定するとviewフォルダに侵入できなくなる。しかしjson.phpが起動しなくなる
+	#逆に＃付けると、json.phpは起動するが、top.phpなどは動かなくなる  #付けると、viewフォルダじぇのアクセスできなくなる
+    #RewriteRule ^.*$ index.php
+</IfModule>
+
